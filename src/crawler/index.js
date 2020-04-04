@@ -1,20 +1,13 @@
-import Crawler from "crawler";
+import axios from "axios";
+import cheerio from "cheerio";
 
+/**
+ * Crawl the price of the transfer in the profissional plan of an smartmei website.
+ * @param {Object} args - Arguments.
+ * @param {string} args.url - Url to crawl data
+ */
 export async function crawl({ url }) {
-  var response = "";
-  const crawler = new Crawler({
-    maxConnections: 5,
-  });
-  crawler.direct({
-    uri: url,
-    skipEventRequest: false,
-    callback(error, res) {
-      if (error) {
-        throw new Error(error);
-      } else {
-        var $ = res.$;
-        response = 
-      }
-    },
-  });
+  const res = await axios.get(url);
+  const $ = cheerio.load(res.data);
+  return $("#tarifas-2 .tarifas-2-2-2").text().replace(/[\\n\s\m(R\$)]+/g, "").replace(",", ".");
 }

@@ -1,0 +1,22 @@
+"""
+Code of currency
+"""
+enum Currency {
+    USD
+    EUR
+    BRL
+}
+"""
+Represents a rate record
+"""
+type Rate {
+    code: Currency
+    value: Double
+}
+
+type Query {
+    """
+    Get the transfer price of the profissional plan
+    """
+    get_transfer_price(url: String!) : [Rate]
+}

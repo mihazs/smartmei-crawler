@@ -23,7 +23,12 @@
     "sinon": "^9.0.1"
   },
   "dependencies": {
-    "crawler": "^1.2.1",
-    "graphql": "^15.0.0"
+    "apollo-server": "^2.11.0",
+    "axios": "^0.19.2",
+    "chai-almost": "^1.0.1",
+    "cheerio": "^1.0.0-rc.3",
+    "delay": "^4.3.0",
+    "graphql": "^15.0.0",
+    "jsdom": "^16.2.2"
   }
 }
