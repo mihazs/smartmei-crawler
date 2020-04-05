@@ -1,12 +1,23 @@
 import { crawl } from "../crawler";
 import { convert } from "../currency-dealer";
+import { DateTimeResolver } from "graphql-scalars";
 
-export default resolvers = {
-    Query: {
-        async get_transfer_price(parent, args, context, info) {
-            const price = await crawl({ url: args.url });
-            const converted = convert({ from: "BRL", to: ["EUR", "USD"] });
-
-        }
-    }
+export default {
+  DateTime: DateTimeResolver,
+  Query: {
+    async transfer_price(parent, { url }, context, info) {
+      const price = await crawl({ url: url });
+      const { rates, date } = await convert({
+        from: "BRL",
+        to: ["EUR", "USD"],
+        value: price,
+      });
+      var res = Object.keys(rates).map((e) => ({
+        code: e,
+        value: rates[e],
+      }));
+      res.push({ code: "BRL", value: parseFloat(price) });
+      return { date, rates: res };
+    },
+  },
 };
