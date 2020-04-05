@@ -2,7 +2,7 @@ import chai, { expect } from "chai";
 import { getLatest, convert } from "../src/currency-dealer";
 import chaiAlmost from "chai-almost";
 
-chai.use(chaiAlmost(0, 1));
+chai.use(chaiAlmost(0.01));
 
 describe("Currency", () => {
   it("Should fetch and convert BRL to USD and EUR", async () => {

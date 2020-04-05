@@ -1,31 +1,33 @@
 scalar DateTime
+scalar URL
 
 """
 Code of currency
 """
 enum Currency {
-    USD
-    EUR
-    BRL
+  USD
+  EUR
+  BRL
 }
 """
 Represents a rate record
 """
 type Rate {
-    code: Currency
-    value: Float
+  code: Currency
+  value: Float
 }
 """
-Represents a rate record
+Represents a rate record with the date of this record
 """
 type DatedRates {
-    date: DateTime
-    rates: [Rate]
+  description: String
+  date: DateTime
+  rates: [Rate]
 }
 
 type Query {
-    """
-    Get the transfer price of the profissional plan
-    """
-    transfer_price(url: String!) : DatedRates
+  """
+  Get the transfer price of the profissional plan
+  """
+  transfer_price(url: URL!): DatedRates
 }
