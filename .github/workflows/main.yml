@@ -3,13 +3,10 @@ name: Test
 on: [push]
 jobs:
   test:
-    # Job name is Greeting
-    name: Test
     # This job runs on Linux
     runs-on: ubuntu-latest
-  steps:
-    - name: Yarn Install and Test
-    - uses: actions/checkout@v2
+    steps:
+    - uses: actions/checkout@v2 
     - uses: actions/setup-node@v1
       with:
         node-version: "13.x"
