@@ -5,8 +5,17 @@
 
 Assumi que as cotações e preços retornadas pela api terão no máximo 2 dígitos após o ponto fixo(precisão de 0.01).
 
-## Como executar
+## Stack utilizada
+    - NodeJS
+    - Babel
+    - Mocha
+    - Chai
+    - Apollo Server
+    - Docker
+    - Github Actions
 
+## Como executar
+Após clonar o repositório, há as seguintes opções para execução:
 Com docker:
 
 ```bash
@@ -24,5 +33,12 @@ Execute os seguintes comandos:
 yarn install --production=false
 yarn build
 yarn start
+
+```
+ou
+
+```bash
+
+./start.sh
 
 ```
