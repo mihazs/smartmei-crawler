@@ -1,7 +1,7 @@
 import { crawl } from "../crawler";
 import { convert } from "../currency-dealer";
 import { DateTimeResolver, URLResolver } from "graphql-scalars";
-
+ 
 export default {
   //Resolve the datetime scalar
   DateTime: DateTimeResolver,
@@ -9,7 +9,7 @@ export default {
   Query: {
     async transfer_price(parent, { url }, context, info) {
       //Crawl the price and the description
-      const { price, description } = await crawl({ url: url });
+      const { price, description } = await crawl({ url: url.href });
       //Convert the price to EUR and USD currencies.
       const { rates, date } = await convert({
         from: "BRL",
