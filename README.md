@@ -16,6 +16,7 @@ Assumi que as cotações e preços retornadas pela api terão no máximo 2 dígi
 
 ## Como executar
 Após clonar o repositório, há as seguintes opções para execução:
+
 Com docker:
 
 ```bash
