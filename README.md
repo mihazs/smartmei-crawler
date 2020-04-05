@@ -13,6 +13,7 @@ Assumi que as cotações e preços retornadas pela api terão no máximo 2 dígi
     - Apollo Server
     - Docker
     - Github Actions
+    - TDD
 
 ## Como executar
 Após clonar o repositório, há as seguintes opções para execução:
@@ -43,3 +44,10 @@ ou
 ./start.sh
 
 ```
+Em seguida abra o browser em:
+```
+http://localhost:4000
+
+```
+
+Abra o playground e boa diversão ;)
