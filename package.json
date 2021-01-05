@@ -26,7 +26,7 @@
   "dependencies": {
     "apollo-server": "^2.11.0",
     "apollo-server-testing": "^2.11.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chai-almost": "^1.0.1",
     "cheerio": "^1.0.0-rc.3",
     "delay": "^4.3.0",
